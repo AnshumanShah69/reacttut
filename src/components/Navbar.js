@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import react, { useState } from "react"
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
   return (
@@ -14,12 +14,12 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              {/* <Link className="nav-link active" aria-current="page" to="/">Home</Link> */}
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+              {/* <a className="nav-link active" aria-current="page" href="#">Home</a> */}
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link className="nav-link" to="/about">{props.aboutText}</Link>
-            </li> */}
+            </li>
           </ul>
           {/* <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -37,12 +37,13 @@ export default function Navbar(props) {
 }
 
 ///proptypes-for checking the datatype being sent from the app.js file for the components
+///only for checking the datatype of the props being sent from the App.js file
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
 }
-///default props
+///default props if no props are passed from the app.js file
 Navbar.defaultProps = {
   title: "Set title here",
-  aboutText: "abput text here"
+  aboutText: "about text here"
 };
